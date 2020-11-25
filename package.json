@@ -1,0 +1,18 @@
+{
+  "name": "web-design-project",
+  "version": "1.0.0",
+  "description": "Renê N. Corrêa 180886 & Igor R. R. Oliveira 180507",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Renê & Igor",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.15"
+  }
+}
