@@ -18,6 +18,18 @@ app.get("/forgot", function(req,res){
     res.render("forgotpassword");
 });
 
+app.get("/profile", function(req, res){
+    res.render("profile");
+});
+
+app.get("/requirement",function(req,res){
+    res.render("requirement");
+});
+
+app.get("/status",function(req,res){
+    res.render("status");
+});
+
 app.get("*", function(req, res){
     res.render("error");
 });
