@@ -20,7 +20,7 @@ const userSchema = new Schema({
         required: true
     },
     requirements: {
-        type: String,
+        type: Array,
     }
 
 }, { timestamps: true });
