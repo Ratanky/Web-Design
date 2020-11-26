@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+const bodyParser = require("body-parser");  //builds te body of a request from a get
+const mongoose = require("mongoose");  //set database
+const nodemailer = require("nodemailer");  //send emails for users and devs 
 
 // mongoose.connect("mongodb+srv://user1:senha123@webdesign.fgics.mongodb.net/nodedb?retryWrites=true&w=majority", {
 //   useNewUrlParser: true
@@ -25,6 +26,7 @@ const mongoose = require("mongoose");
 
 var login = "email@email.com";
 var senha = "123456";
+var error = "";
 
 app.use(express.static("public"));
 
@@ -35,6 +37,11 @@ app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
   res.render("login");
+  if(error != ""){
+    console.log(error);
+    
+    error =  "";
+  }
 });
 
 app.post("/login",function(req,res){
@@ -43,13 +50,13 @@ app.post("/login",function(req,res){
   if(data.email == login && data.password == senha){
     res.redirect("/status");
   } else {
-    console.log("Login error.");
+    error = "E-mail or password are incorrect";
     res.redirect("/");
   }
 });
 
-app.get("/status", function (req, res) {
-  res.render("status");
+app.get("/status", function (req, res){
+    res.render("status")
 });
 
 app.get("/profile", function (req, res) {
@@ -62,14 +69,19 @@ app.get("/requirement", function (req, res) {
 
 app.get("/create", function (req, res) {
   res.render("createaccount");
+  if(error != ""){
+    console.log(error);
+    
+    error =  "";
+  }
 });
 
 app.post("/create", function (req, res) {
   var data = req.body;
   console.log(data);
-  if(data.password1 != data.password2){
-    console.log("Different passwords");
-    res.redirect("create");
+  if(data.password!= data.confirmpassword){
+    error = "Passwords are different";
+    res.redirect("/create");
   } else {
     res.redirect("/");
   }
@@ -77,9 +89,7 @@ app.post("/create", function (req, res) {
 });
 
 app.get("/forgot", function (req, res) {
-  res.render("forgotpassword");app.get("/status", function (req, res) {
-  res.render("status");
-}); 
+  res.render("forgotpassword");
 });
 
 app.post("/forgot", function (req, res) {
