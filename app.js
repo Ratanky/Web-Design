@@ -13,16 +13,24 @@ app.get("/", function (req, res) {
   res.render("login");
 });
 
+app.post("/login",function(req,res){
+  var data = req.body;
+  console.log(data);
+  if(2>1){
+    res.redirect("/status");
+  }
+});
+
+app.get("/status", function (req, res) {
+  res.render("status");
+});
+
 app.get("/profile", function (req, res) {
   res.render("profile");
 });
 
 app.get("/requirement", function (req, res) {
   res.render("requirement");
-});
-
-app.get("/status", function (req, res) {
-  res.render("status");
 });
 
 app.get("/create", function (req, res) {
@@ -36,7 +44,9 @@ app.post("/create", function (req, res) {
 });
 
 app.get("/forgot", function (req, res) {
-  res.render("forgotpassword");
+  res.render("forgotpassword");app.get("/status", function (req, res) {
+  res.render("status");
+}); 
 });
 
 app.post("/forgot", function (req, res) {
