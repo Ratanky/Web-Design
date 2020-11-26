@@ -11,7 +11,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    passworld: {
+    password: {
         type: String,
         required: true
     },
