@@ -3,6 +3,37 @@
 <form action="/create" method="POST">
   <div class="container-login100">
     <div class="card-header">
+      <div class="card-columns">
+          <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleInputName">Nome</label>
+                <input
+                    
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Nome"
+                    name="name"
+                    width="60px"
+                    required
+                />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleInputLastname">Sobrenome</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="lastname"
+                    placeholder="Sobrenome"
+                    name="lastname"
+                    width="60px"
+                    required
+                />
+            </div>
+          </div>
+      </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Endereço de email</label>
         <input
@@ -11,10 +42,11 @@
           id="Email"
           aria-describedby="emailHelp"
           placeholder="Seu email"
+          name="email"
         />
-        <small id="emailHelp" class="form-text text-muted"
-          >Nunca vamos compartilhar seu email, confia no pai.</small
-        >
+        <small id="emailHelp" class="form-text text-muted">
+          Nunca vamos compartilhar seu email, confia no pai.
+        </small>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Senha</label>
@@ -23,6 +55,7 @@
           class="form-control"
           id="Password1"
           placeholder="Senha"
+          name="password"
         />
       </div>
       <div class="form-group">
@@ -32,9 +65,10 @@
           class="form-control"
           id="Password2"
           placeholder="Senha"
+          name="confirmpassword"
         />
       </div>
-      <button type="submit" class="btn btn-primary"> Enviar </button>
+      <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
   </div>
 </form>
