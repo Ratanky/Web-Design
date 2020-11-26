@@ -4,6 +4,14 @@ const bodyParser = require("body-parser");  //builds te body of a request from a
 const mongoose = require("mongoose");  //set database
 const nodemailer = require("nodemailer");  //send emails for users and devs 
 
+//*connect to MongoDB
+const dbURI = "mongodb+srv://primary_user:tB90283jFqzuRFTE@web-design.lu6wv.mongodb.net/node-web?retryWrites=true&w=majority"
+mongoose.connect(dbURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})  .then((result) => app.listen(8080, function(){console.log("The server is now started\nIgor R. R. Oliveira 180507 -- Rene N. Correa 180886\n")}))
+    .catch((error) => console.log(error));
+
 // mongoose.connect("mongodb+srv://user1:senha123@webdesign.fgics.mongodb.net/nodedb?retryWrites=true&w=majority", {
 //   useNewUrlParser: true
 // }, function(error){
@@ -98,11 +106,7 @@ app.post("/forgot", function (req, res) {
   res.redirect("/");
 });
 
-app.listen(8080, function () {
-  console.log(
-    "The server is now started\nIgor R. R. Oliveira 180507 -- Rene N. Correa 180886\n"
-  );
-});
+
 
 app.get("*", function (req, res) {
   res.render("error");
