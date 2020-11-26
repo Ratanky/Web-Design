@@ -1,5 +1,5 @@
 const express = require("express");
-//const lodash = require("lodash");
+
 const app = express();
 const bodyParser = require("body-parser");
 
@@ -11,14 +11,6 @@ app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
   res.render("login");
-});
-
-app.get("/create", function (req, res) {
-  res.render("createaccount");
-});
-
-app.get("/forgot", function (req, res) {
-  res.render("forgotpassword");
 });
 
 app.get("/profile", function (req, res) {
@@ -33,10 +25,24 @@ app.get("/status", function (req, res) {
   res.render("status");
 });
 
+app.get("/create", function (req, res) {
+  res.render("createaccount");
+});
+
 app.post("/create", function (req, res) {
   var data = req.body;
   console.log(data);
-  //res.redirect("/");
+  res.redirect("/");
+});
+
+app.get("/forgot", function (req, res) {
+  res.render("forgotpassword");
+});
+
+app.post("/forgot", function (req, res) {
+  var data = req.body;
+  console.log(data);
+  res.redirect("/");
 });
 
 app.listen(8080, function () {
