@@ -18,6 +18,12 @@ app.get("/create", function(req,res){
     res.render("createaccount");
 });
 
+app.post("/create", function(req,res){
+    var data = req.body;
+    console.log(data);
+    res.redirect("/");
+});
+
 app.get("/forgot", function(req,res){
     res.render("forgotpassword");
 });
