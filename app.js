@@ -131,6 +131,15 @@ app.get("/forgot", function (req, res) {
 app.post("/forgot", function (req, res) {
   var data = req.body;
   console.log(data);
+  if(data.newpassword == data.confirmpassword){
+    User.findOneAndUpdate({ 'email':data.email, 'password':data.oldpassword }, { 'password':data.newpassword }, {new: true}, (error, data) => {
+        if(error){
+            console.log(error);
+        } else {
+            console.log(data);
+        }
+    })
+  }
 
   res.redirect("/");
 });
