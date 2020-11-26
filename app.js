@@ -22,7 +22,7 @@ mongoose
   .catch((error) => console.log(error));
 
 const User = require("./models/users");
-
+var logged = "";
 var error = "";
 
 app.use(express.static("public"));
@@ -31,6 +31,7 @@ app.set("view engine", "ejs");
 
 //TODO show msg error to the user
 app.get("/", function (req, res) {
+  logged = "";
   res.render("login");
   if (error != "") {
     console.log(error);
@@ -45,7 +46,8 @@ app.post("/login", function (req, res) {
     .then((result) => {
       if (result != null && result.password == data.password) {
         console.log(data);
-        res.redirect("/status");
+        logged = result;
+        res.redirect("/home");
       } else {
         error = "Login incorreto";
         res.redirect("/");
@@ -57,8 +59,16 @@ app.post("/login", function (req, res) {
 });
 
 //TODO ejs
-app.get("/status", function (req, res) {
-  res.render("status");
+app.get("/home", function (req, res) {
+  res.render("home", {
+    user: logged
+  });
+  console.log(logged);
+  if (error != "") {
+    console.log(error);
+
+    error = "";
+  }
 });
 
 //TODO ejs
@@ -81,7 +91,6 @@ app.get("/create", function (req, res) {
   }
 });
 
-//TODO make work properly
 app.post("/create", function (req, res) {
   var data = req.body;
   if (data.password != data.confirmpassword) {
@@ -127,7 +136,6 @@ app.get("/forgot", function (req, res) {
   }
 });
 
-//TODO
 app.post("/forgot", function (req, res) {
   var data = req.body;
   console.log(data);
@@ -140,7 +148,6 @@ app.post("/forgot", function (req, res) {
         }
     })
   }
-
   res.redirect("/");
 });
 
