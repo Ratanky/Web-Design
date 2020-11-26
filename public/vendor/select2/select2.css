@@ -417,7 +417,7 @@
     font-weight: bold;
     margin-right: 2px; }
     .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
-      color: #555; }
+      color: #ffffff; }
 
 .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
   float: right; }

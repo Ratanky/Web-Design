@@ -7,64 +7,104 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>Projection by TEMPLATED</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
+<style>
+	.blacktext {
+		color: black;
+	}
+</style>
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="logo"><strong>Projection</strong> by TEMPLATED</a>
-					<nav id="nav">
-						<a href="index.html">Home</a>
-						<a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a>
-					</nav>
-					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-				</div>
+<head>
+	<title>Account Controller</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<a href="index.html" class="logo"><strong>Account</strong> Controller</a>
+			<nav id="nav">
+				<a href="index.html">Status</a>
+				<a href="generic.html">Nova Solicitação</a>
+				<a href="elements.html">Perfil</a>
+			</nav>
+			<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+		</div>
+	</header>
+
+	<!-- Banner -->
+	<section id="banner">
+		<div class="inner">
+			<header>
+				<h1>Suas Solicitações</h1>
 			</header>
 
-		<!-- Banner -->
-			<section id="banner">
-				<div class="inner">
-					<header>
-						<h1>Welcome to Projection</h1>
-					</header>
+			<!--<div class="flex "> -->
 
-					<div class="flex ">
-
-						<div>
-							<span class="icon fa-car"></span>
-							<h3>Aliquam</h3>
-							<p>Suspendisse amet ullamco</p>
-						</div>
-
-						<div>
-							<span class="icon fa-camera"></span>
-							<h3>Elementum</h3>
-							<p>Class aptent taciti ad litora</p>
-						</div>
-
-						<div>
-							<span class="icon fa-bug"></span>
-							<h3>Ultrices</h3>
-							<p>Nulla vitae mauris non felis</p>
-						</div>
-
+				<div>
+					<h3 style='text-align:center'>Table</h3>
+					<br>
+					<br>
+					<br>
+					<div class="table-wrapper">
+						<table>
+							<thead>
+								<tr>
+									<th class="blacktext" style='text-align:center'>Software</th>
+									<th class="blacktext" style='text-align:center'>Status</th>
+									<th class="blacktext" style='text-align:center'>Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Conta SAP</td>
+									<td>Ativo</td>
+									<td>410.00</td>
+								</tr>
+								<tr>
+									<td>VNF</td>
+									<td>Pendente de aprovação</td>
+									<td>19.00</td>
+								</tr>
+								<tr>
+									<td>Espider</td>
+									<td> Criação de conta</td>
+									<td>50.00</td>
+								</tr>
+								<tr>
+									<td>Item 4</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>Item 5</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="2"></td>
+									<td>479.00</td>
+								</tr>
+							</tfoot>
+						</table>
 					</div>
-
-					<footer>
-						<a href="#" class="button">Get Started</a>
-					</footer>
 				</div>
-			</section>
+
+			
+
+			<footer>
+				<a href="#" class="button">Nova Solicitação</a>
+			</footer>
+		</div>
+	</section>
 
 
-		<!-- Three -->
+	<!-- Three 
 			<section id="three" class="wrapper align-center">
 				<div class="inner">
 					<div class="flex flex-2">
@@ -94,47 +134,52 @@
 						</article>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
 
-					<h3>Get in touch</h3>
+			<h3>Get in touch</h3>
 
-					<form action="#" method="post">
+			<form action="#" method="post">
 
-						<div class="field half first">
-							<label for="name">Name</label>
-							<input name="name" id="name" type="text" placeholder="Name">
-						</div>
-						<div class="field half">
-							<label for="email">Email</label>
-							<input name="email" id="email" type="email" placeholder="Email">
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
-						</div>
-						<ul class="actions">
-							<li><input value="Send Message" class="button alt" type="submit"></li>
-						</ul>
-					</form>
-
-					<div class="copyright">
-						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
-					</div>
-
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input name="name" id="name" type="text" placeholder="Name">
 				</div>
-			</footer>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input name="email" id="email" type="email" placeholder="Email">
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input value="Send Message" class="button alt" type="submit"></li>
+				</ul>
+			</form>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<div class="copyright">
+				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a
+					href="https://unsplash.com">Unsplash</a>.
+			</div>
 
-	</body>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
 
+
+
 <%- include('partials/footer') %>
+
