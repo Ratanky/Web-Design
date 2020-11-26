@@ -21,7 +21,8 @@ const userSchema = new Schema({
     },
     requirements: {
         type: Array,
-    }
+        status: String
+    },
 
 }, { timestamps: true });
 

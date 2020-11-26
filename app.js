@@ -5,7 +5,7 @@ const mongoose = require("mongoose"); //set database
 const nodemailer = require("nodemailer"); //send emails for users and devs
 
 //*connect to MongoDB
-const dbURI =
+const dbURI = 
   "mongodb+srv://primary_user:tB90283jFqzuRFTE@web-design.lu6wv.mongodb.net/node-web?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI, {
@@ -101,7 +101,7 @@ app.post("/create", function (req, res) {
       .then((result) => {
         if (result == null) {
           const user = new User({
-            name: data.name + " " + data.lastname,
+            name: data.name.charAt(0).toUpperCase() + data.name.slice(1) + " " + data.lastname.charAt(0).toUpperCase() + data.lastname.slice(1),
             email: data.email,
             password: data.password,
             role: "newbie",
