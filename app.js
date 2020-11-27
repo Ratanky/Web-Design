@@ -35,7 +35,7 @@ app.get("/", function (req, res) {
   res.render("login");
   if (error != "") {
     console.log(error);
-
+    
     error = "";
   }
 });
