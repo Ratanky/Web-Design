@@ -11,9 +11,6 @@ const requirementSchema = new Schema({
         type: String,
         required: true
     },
-    status: {
-        type: String,
-    },
     description: {
         type: String,
     },
